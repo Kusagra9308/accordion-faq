@@ -1,5 +1,4 @@
 import Load from "./components/acc";
-import "./index.css"; 
 function App() {
   return (
     <>
