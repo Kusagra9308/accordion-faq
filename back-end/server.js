@@ -8,13 +8,13 @@ dotenv.config();
 
 const app = express();
 
-
 app.use(cors());
 app.use(express.json());
-
+app.get("/test", (req, res) => {
+  res.send("Server is alive");
+});
 
 app.use("/api/questions", questionRoutes);
-
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -25,8 +25,7 @@ mongoose
     console.error("MongoDB connection error:", error);
   });
 
-
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
