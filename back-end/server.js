@@ -13,6 +13,9 @@ app.use(express.json());
 app.get("/test", (req, res) => {
   res.send("Server is alive");
 });
+app.get("/api/questions", (req, res) => {
+  res.send("SERVER LEVEL ROUTE HIT");
+});
 
 app.use("/api/questions", questionRoutes);
 
