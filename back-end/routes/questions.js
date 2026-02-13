@@ -3,6 +3,10 @@ import Question from "../models/Question.js";
 
 const router = express.Router();
 
+router.get("/ping", (req, res) => {
+  res.send("questions route alive");
+});
+
 
 router.get("/", async (req, res) => {
   try {
